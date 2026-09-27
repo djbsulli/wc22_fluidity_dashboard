@@ -138,6 +138,7 @@ def render_team_line_chart(team, team_fluidity, matches_df):
         )
 
     ax.set_xlim(0.5, len(team_data) + 0.5)
+    ax.set_ylim(0.1,0.4)
     ax.margins(y=0.15)
     ax.set_xticks(team_data['game_number'])
     ax.tick_params(axis='both', labelsize=10)
