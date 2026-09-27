@@ -57,8 +57,8 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
         dot_size = 45
     else:
         figsize = (6, 5.4)
-        title_fontsize = 12
-        legend_fontsize = 15
+        title_fontsize = 14
+        legend_fontsize = 13
         dot_size = 32
 
     fig, ax = plt.subplots(figsize=figsize)
