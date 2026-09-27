@@ -69,8 +69,8 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
 
     ax.annotate(
     'Defending  →  Attacking',
-    xy=(0.5, -0.06), xycoords='axes fraction',
-    ha='center', va='top', fontsize=legend_fontsize, color='#555555',
+    xy=(0.5, -0.03), xycoords='axes fraction',
+    ha='center', va='top', fontsize=legend_fontsize, color='#555555', style='italic',
     annotation_clip=False
 )
 
