@@ -140,10 +140,10 @@ def render_team_line_chart(team, team_fluidity, matches_df):
     ax.set_xlim(0.5, len(team_data) + 0.5)
     ax.margins(y=0.15)
     ax.set_xticks(team_data['game_number'])
-    ax.tick_params(axis='both', labelsize=8)
+    ax.tick_params(axis='both', labelsize=10)
     ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-    ax.set_xlabel('Game Number', fontsize=15, fontweight='bold')
-    ax.set_ylabel('Fluidity (%)', fontsize=15, fontweight='bold')
+    ax.set_xlabel('Game Number', fontsize=10, style='italic')
+    ax.set_ylabel('Fluidity (%)', fontsize=10, style='italic')
     ax.set_title(f'{team} — Fluidity Across the Tournament', fontsize=18, fontweight='bold')
     ax.grid(axis='y', alpha=0.2)
     for spine in ['top', 'right']:
