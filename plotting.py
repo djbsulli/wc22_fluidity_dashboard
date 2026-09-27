@@ -104,7 +104,7 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
         pct_label = f"{row['fluidity_pct']:.0%} ({percentile} percentile for {row['broad_position']})"
         title = f"{row['position']}\n{row['touches']} touches\n{pct_label}"
 
-    ax.set_title(title, fontsize=title_fontsize, pad=12)
+    ax.set_title(title, fontsize=title_fontsize, fontweight='bold', pad=12)
 
     plt.tight_layout(rect=[0, 0, 1, 0.90])
     return fig
