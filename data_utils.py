@@ -7,25 +7,24 @@ position's expected/deviation zones.
 import streamlit as st
 import pandas as pd
 
-
 @st.cache_data
 def load_touches():
-    return pd.read_parquet('data/wc2022_touches_zoned.parquet')
+    return pd.read_parquet('data/wc2022_fluidity_score_touches.parquet')
 
 
 @st.cache_data
 def load_fluidity_scores():
-    return pd.read_parquet('data/wc2022_player_match_fluidity.parquet')
+    return pd.read_parquet('data/wc2022_player_match_fluidity_results.parquet')
 
 
 @st.cache_data
 def load_team_fluidity():
-    return pd.read_parquet('data/wc2022_team_fluidity_match_scores.parquet')
+    return pd.read_parquet('data/wc2022_team_match_fluidity_results.parquet')
 
 
 @st.cache_data
 def load_matches():
-    return pd.read_parquet('data/wc2022_matches_metadata.parquet')
+    return pd.read_parquet('data/matches_metadata.parquet')
 
 
 # Final expected-zone mapping, copied from the analysis notebook.
