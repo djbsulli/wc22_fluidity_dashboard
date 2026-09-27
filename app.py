@@ -103,7 +103,7 @@ if page == "Team":
     bottom_per_player = bottom_per_player[~bottom_per_player['player_id'].isin(top3['player_id'])]
     bottom3 = bottom_per_player.nsmallest(3, 'fluidity_pct')
 
-    st.subheader("Most fluid performances this match")
+    st.subheader("Most fluid players")
     if len(top3) == 0:
         st.info("No players in this match had enough touches to qualify for a fluidity score.")
     else:
@@ -113,7 +113,7 @@ if page == "Team":
                 fig = render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='team')
                 st.pyplot(fig)
 
-    st.subheader("Least fluid performances this match")
+    st.subheader("Least fluid players")
     if len(bottom3) == 0:
         st.info("Not enough additional qualifying players this match to show a bottom 3.")
     else:
