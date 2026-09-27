@@ -53,7 +53,7 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
     if mode == 'team':
         figsize = (8, 7.2)
         title_fontsize = 11
-        legend_fontsize = 14
+        legend_fontsize = 16
         dot_size = 45
     else:
         figsize = (6, 5.4)
