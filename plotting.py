@@ -68,12 +68,11 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
     pitch.draw(ax=ax)
 
     ax.annotate(
-    '', xy=(115, -6), xytext=(5, -6),
-    arrowprops=dict(arrowstyle='->', color='#555555', lw=1.2),
+    'Defending  →  Attacking',
+    xy=(0.5, -0.06), xycoords='axes fraction',
+    ha='center', va='top', fontsize=legend_fontsize, color='#555555',
     annotation_clip=False
 )
-    ax.text(60, -10, 'Defending  ────────────────────  Attacking',
-        ha='center', va='top', fontsize=9, color='#555555')
 
     expected_cells = set(expected_cells_mapping.get(row['position'], []))
 
