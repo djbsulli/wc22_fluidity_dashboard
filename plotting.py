@@ -113,36 +113,38 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
 def render_team_line_chart(team, team_fluidity, matches_df):
     """
     Line chart of one team's fluidity across all their matches, in
-    chronological order, with each point labeled by opponent. Sized
-    small/compact, since this sits as a header chart above the rest of
-    the team page rather than being the page's main visual.
+    chronological order, with each point labeled by opponent. Sized to
+    fill the full page width with generous text, tight x-axis margins
+    so the line runs edge-to-edge rather than floating in whitespace.
     """
     team_data = team_fluidity[team_fluidity['team'] == team].copy()
     team_data = team_data.merge(matches_df[['match_id', 'match_date']], on='match_id', how='left')
     team_data = team_data.sort_values('match_date')
     team_data['game_number'] = range(1, len(team_data) + 1)
 
-    fig, ax = plt.subplots(figsize=(18, 6))
+    fig, ax = plt.subplots(figsize=(14, 8))
     fig.patch.set_facecolor('white')
 
     ax.plot(
         team_data['game_number'], team_data['team_fluidity_pct'],
-        marker='o', linewidth=1.5, markersize=5, color=LINE_COLOR
+        marker='o', linewidth=2.5, markersize=10, color=LINE_COLOR
     )
     for _, row in team_data.iterrows():
         ax.annotate(
             row['opponent'], (row['game_number'], row['team_fluidity_pct']),
-            xytext=(0, 7), textcoords='offset points',
-            ha='center', fontsize=7, fontweight='bold', color='#0B0B0B',
-            bbox=dict(facecolor='white', edgecolor='none', alpha=0.8, pad=1)
+            xytext=(0, 14), textcoords='offset points',
+            ha='center', fontsize=13, fontweight='bold', color='#0B0B0B',
+            bbox=dict(facecolor='white', edgecolor='none', alpha=0.8, pad=2)
         )
 
+    ax.set_xlim(0.5, len(team_data) + 0.5)
+    ax.margins(y=0.15)
     ax.set_xticks(team_data['game_number'])
-    ax.tick_params(axis='both', labelsize=8)
+    ax.tick_params(axis='both', labelsize=13)
     ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-    ax.set_xlabel('Game Number', fontsize=9, fontweight='bold')
-    ax.set_ylabel('Fluidity (%)', fontsize=9, fontweight='bold')
-    ax.set_title(f'{team} — Fluidity Across the Tournament', fontsize=10, fontweight='bold')
+    ax.set_xlabel('Game Number', fontsize=15, fontweight='bold')
+    ax.set_ylabel('Fluidity (%)', fontsize=15, fontweight='bold')
+    ax.set_title(f'{team} — Fluidity Across the Tournament', fontsize=18, fontweight='bold')
     ax.grid(axis='y', alpha=0.2)
     for spine in ['top', 'right']:
         ax.spines[spine].set_visible(False)
