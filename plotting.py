@@ -98,7 +98,8 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
     percentile = ordinal(row['fluidity_percentile_position'])
 
     if mode == 'team':
-    pct_label = f"{row['fluidity_pct']:.0%} fluidity ({percentile} Percentile {row['broad_position']})"
+        pct_label = f"{row['fluidity_pct']:.0%} fluidity ({percentile} Percentile {row['broad_position']})"
+        title = f"{row['name']}\n{row['position']}\n{row['touches']} touches\n{pct_label}"
     else:
         pct_label = f"{row['fluidity_pct']:.0%} ({percentile} percentile for {row['broad_position']})"
         title = f"{row['position']}\n{row['touches']} touches\n{pct_label}"
