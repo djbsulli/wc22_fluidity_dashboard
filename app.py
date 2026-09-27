@@ -62,7 +62,7 @@ if page == "Team":
     fig_line, team_line_data = render_team_line_chart(selected_team, team_fluidity, matches_df)
     line_col = st.columns([1, 2, 1])[1]
     with line_col:
-        st.pyplot(fig_line, use_container_width=False)
+        st.pyplot(fig_line, use_container_width=True)
 
     # 2. Match selector, chronological
     team_match_ids = team_fluidity[team_fluidity['team'] == selected_team]['match_id'].tolist()
