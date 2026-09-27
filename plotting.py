@@ -133,7 +133,7 @@ def render_team_line_chart(team, team_fluidity, matches_df):
         ax.annotate(
             row['opponent'], (row['game_number'], row['team_fluidity_pct']),
             xytext=(0, 14), textcoords='offset points',
-            ha='center', fontsize=13, fontweight='bold', color='#0B0B0B',
+            ha='center', fontsize=8, fontweight='bold', color='#0B0B0B',
             bbox=dict(facecolor='white', edgecolor='none', alpha=0.8, pad=2)
         )
 
