@@ -127,7 +127,7 @@ def render_team_line_chart(team, team_fluidity, matches_df):
 
     ax.plot(
         team_data['game_number'], team_data['team_fluidity_pct'],
-        marker='o', linewidth=2.5, markersize=10, color=LINE_COLOR
+        marker='o', linewidth=1.5, markersize=5, color=LINE_COLOR
     )
     for _, row in team_data.iterrows():
         ax.annotate(
