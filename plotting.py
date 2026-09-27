@@ -67,6 +67,14 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
     pitch = Pitch(pitch_type='statsbomb', line_color='#999999', pitch_color='white', linewidth=0.8)
     pitch.draw(ax=ax)
 
+    ax.annotate(
+    '', xy=(115, -6), xytext=(5, -6),
+    arrowprops=dict(arrowstyle='->', color='#555555', lw=1.2),
+    annotation_clip=False
+)
+    ax.text(60, -10, 'Defending  ────────────────────  Attacking',
+        ha='center', va='top', fontsize=9, color='#555555')
+
     expected_cells = set(expected_cells_mapping.get(row['position'], []))
 
     for i in range(3):
