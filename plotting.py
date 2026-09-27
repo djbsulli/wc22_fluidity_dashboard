@@ -164,7 +164,7 @@ def render_team_swarm_highlight(team_fluidity, highlighted_row):
         color=HIGHLIGHT_COLOR, s=100, zorder=5, edgecolors='white', linewidths=0.8
     )
     ax.annotate(
-        f"This match: {ordinal(highlighted_row['team_fluidity_percentile'])} percentile",
+       "Selected Match",
         (highlighted_row['team_fluidity_pct'], 0),
         xytext=(0, 20), textcoords='offset points',
         ha='center', va='bottom', fontsize=10, fontweight='bold', color=HIGHLIGHT_COLOR
