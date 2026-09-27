@@ -125,20 +125,19 @@ if page == "Team":
 # PLAYER PAGE
 # ---------------------------------------------------------------------------
 else:
-    # Step 1: filter by position
-    positions_list = sorted(fluidity_scores['position'].unique())
-    selected_position = st.sidebar.selectbox("Select a position", positions_list)
+   # Step 1: filter by team
+    teams_list = sorted(fluidity_scores['team'].unique())
+    selected_team_player_page = st.sidebar.selectbox("Select a team", teams_list)
 
-    # Step 2: alphabetical player list, filtered to that position
-    position_players = (
-        fluidity_scores[fluidity_scores['position'] == selected_position][['player_id', 'name', 'team']]
+    # Step 2: alphabetical player list, filtered to that team
+    team_players = (
+        fluidity_scores[fluidity_scores['team'] == selected_team_player_page][['player_id', 'name']]
         .drop_duplicates()
         .sort_values('name')
     )
-    position_players['label'] = position_players['name'] + ' (' + position_players['team'] + ')'
 
-    selected_label = st.sidebar.selectbox("Select a player", position_players['label'].tolist())
-    selected_player_id = position_players.loc[position_players['label'] == selected_label, 'player_id'].iloc[0]
+    selected_label = st.sidebar.selectbox("Select a player", team_players['name'].tolist())
+    selected_player_id = team_players.loc[team_players['name'] == selected_label, 'player_id'].iloc[0]
 
     player_data_all = fluidity_scores[fluidity_scores['player_id'] == selected_player_id]
     player_team = player_data_all['team'].iloc[0]
