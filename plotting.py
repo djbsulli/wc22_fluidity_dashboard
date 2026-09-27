@@ -191,7 +191,7 @@ def render_team_swarm_highlight(team_fluidity, highlighted_row):
     ax.set_xlim(xlim_low, xlim_high)
     ax.set_ylim(-0.4, 0.65)
     ax.xaxis.set_major_formatter(PercentFormatter(1.0))
-    ax.tick_params(axis='x', labelsize=8)
+    ax.tick_params(axis='x', labelsize=5)
     ax.set_yticks([])
     ax.set_ylabel('')
     ax.set_xlabel('Fluidity (%)', fontsize=7, style='italic')
