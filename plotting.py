@@ -175,7 +175,7 @@ def render_team_swarm_highlight(team_fluidity, highlighted_row):
 
     sns.swarmplot(data=plot_data, x='team_fluidity_pct', y='group', size=3.5, color=BASE_COLOR, ax=ax)
 
-    ax.text(overall_mean, 0.56, 'Tournament average', fontsize=7.5, va='bottom', ha='center', color='#0B0B0B')
+    ax.text(overall_mean, 0.56, 'Tournament average', fontsize=6, style='italic', va='bottom', ha='left', color='#0B0B0B')
 
     ax.scatter(
         highlighted_row['team_fluidity_pct'], 0,
