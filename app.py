@@ -76,7 +76,7 @@ if page == "Team":
     st.subheader(selected_label)
     col1, col2 = st.columns(2)
     col1.metric("Team Fluidity", f"{match_team_row['team_fluidity_pct']:.0%}")
-    col2.metric("Percentile (all team-matches)", ordinal(match_team_row['team_fluidity_percentile']))
+    col2.metric("Percentile (all team-match scores)", ordinal(match_team_row['team_fluidity_percentile']))
 
     st.pyplot(render_team_swarm_highlight(team_fluidity, match_team_row))
 
