@@ -194,7 +194,7 @@ def render_team_swarm_highlight(team_fluidity, highlighted_row):
     ax.tick_params(axis='x', labelsize=8)
     ax.set_yticks([])
     ax.set_ylabel('')
-    ax.set_xlabel('Fluidity (%)', fontsize=7, style='italic)
+    ax.set_xlabel('Fluidity (%)', fontsize=7, style='italic')
     ax.set_title('Vs All Team-Match Scores', fontsize=8, fontweight='bold')
     for spine in ax.spines.values():
         spine.set_visible(False)
