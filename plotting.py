@@ -79,7 +79,7 @@ def render_pitch_card(row, touches, matches_df, expected_cells_mapping, mode='te
         plt.Rectangle((0, 0), 1, 1, facecolor='#993C1D', alpha=0.3, label='Unexpected'),
     ]
     ax.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.03),
-              ncol=2, frameon=False, fontsize=10)
+              ncol=2, frameon=False, fontsize=13)
 
     percentile = ordinal(row['fluidity_percentile_position'])
 
