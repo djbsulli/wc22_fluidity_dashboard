@@ -122,7 +122,7 @@ def render_team_line_chart(team, team_fluidity, matches_df):
     team_data = team_data.sort_values('match_date')
     team_data['game_number'] = range(1, len(team_data) + 1)
 
-    fig, ax = plt.subplots(figsize=(14, 10))
+    fig, ax = plt.subplots(figsize=(18, 10))
     fig.patch.set_facecolor('white')
 
     ax.plot(
