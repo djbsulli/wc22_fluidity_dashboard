@@ -179,12 +179,12 @@ def render_team_swarm_highlight(team_fluidity, highlighted_row):
 
     ax.scatter(
         highlighted_row['team_fluidity_pct'], 0,
-        color=HIGHLIGHT_COLOR, s=70, zorder=5, edgecolors='white', linewidths=0.6
+        color=HIGHLIGHT_COLOR, s=50, zorder=5, edgecolors='white', linewidths=0.6
     )
     ax.annotate(
         "Selected Match",
         (highlighted_row['team_fluidity_pct'], 0),
-        xytext=(0, 14), textcoords='offset points',
+        xytext=(0, 10), textcoords='offset points',
         ha='center', va='bottom', fontsize=6, fontweight='bold', color=HIGHLIGHT_COLOR
     )
 
